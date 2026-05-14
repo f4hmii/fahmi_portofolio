@@ -11,7 +11,7 @@ export const metadata = {
   title: 'Portofolio Fahmi | Web Developer',
   description: 'Portofolio web developer dengan desain Neubrutalism yang interaktif dan menarik.',
   icons: {
-    icon: '/image/zflogo.png',
+    icon: '/image/zsPorto.png',
   },
 }
 
