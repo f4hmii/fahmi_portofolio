@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#FFF8E7] text-neo-black font-sans selection:bg-neo-pink selection:text-white;
+  }
+  p, a {
+    font-family: var(--chakra-fonts-body, sans-serif);
+  }
+}
+
+@layer utilities {
+  .neo-btn {
+    @apply inline-block px-8 py-4 bg-neo-cyan border-3 border-neo-black shadow-neo-md font-bold text-xl transition-transform hover:-translate-y-1 hover:shadow-neo-hover active:translate-y-1 active:shadow-neo-sm;
+    font-family: var(--chakra-fonts-body, sans-serif);
+  }
+  
+  .neo-card {
+    @apply bg-white border-3 border-neo-black shadow-neo-md p-6 transition-all hover:-translate-y-1 hover:shadow-neo-hover;
+  }
+
+  .neo-tag {
+    @apply inline-block px-3 py-1 bg-neo-yellow border-2 border-neo-black shadow-neo-sm font-bold text-sm;
+    font-family: var(--chakra-fonts-body, sans-serif);
+  }
+}
