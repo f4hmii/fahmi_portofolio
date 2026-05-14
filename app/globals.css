@@ -4,17 +4,21 @@
 
 @layer base {
   body {
-    @apply bg-[#FFF8E7] text-neo-black font-sans selection:bg-neo-pink selection:text-white;
+    @apply bg-[#FFF8E7] text-neo-black selection:bg-neo-pink selection:text-white;
+    font-family: var(--font-pixel-secondary), monospace;
   }
-  p, a {
-    font-family: var(--chakra-fonts-body, sans-serif);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-pixel-primary), cursive;
+    letter-spacing: -2px;
   }
 }
 
 @layer utilities {
   .neo-btn {
-    @apply inline-block px-8 py-4 bg-neo-cyan border-3 border-neo-black shadow-neo-md font-bold text-xl transition-transform hover:-translate-y-1 hover:shadow-neo-hover active:translate-y-1 active:shadow-neo-sm;
-    font-family: var(--chakra-fonts-body, sans-serif);
+    @apply inline-block px-8 py-4 bg-neo-cyan border-3 border-neo-black shadow-neo-md transition-transform hover:-translate-y-1 hover:shadow-neo-hover active:translate-y-1 active:shadow-neo-sm;
+    font-family: var(--font-pixel-primary), cursive;
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
   
   .neo-card {
@@ -22,7 +26,11 @@
   }
 
   .neo-tag {
-    @apply inline-block px-3 py-1 bg-neo-yellow border-2 border-neo-black shadow-neo-sm font-bold text-sm;
-    font-family: var(--chakra-fonts-body, sans-serif);
+    @apply inline-block px-3 py-1 bg-neo-yellow border-2 border-neo-black shadow-neo-sm font-bold text-xs;
+    font-family: var(--font-pixel-secondary), monospace;
+  }
+
+  .font-nunito {
+    font-family: var(--font-nunito), sans-serif;
   }
 }

@@ -44,16 +44,17 @@ export default function Home() {
           Portofolio<span className="text-neo-pink">.</span>
         </h1>
         
-        {/* Nav Links */}
-        <div className="hidden md:flex gap-6 lg:gap-8 font-black text-base md:text-lg uppercase items-center bg-white">
-          <a href="#" className="hover:text-neo-pink transition-colors hover:underline decoration-4 underline-offset-8">Home</a>
-          <a href="#skills" className="hover:text-neo-cyan transition-colors hover:underline decoration-4 underline-offset-8">About</a>
-          <a href="#contact" className="hover:text-neo-yellow transition-colors hover:underline decoration-4 underline-offset-8">Contact</a>
-        </div>
+        {/* Nav Links & Action Button */}
+        <div className="flex items-center gap-4 md:gap-8">
+          <div className="hidden md:flex gap-6 lg:gap-8 font-black text-base md:text-lg uppercase items-center">
+            <a href="#" className="hover:text-neo-pink transition-colors hover:underline decoration-4 underline-offset-8">Home</a>
+            <a href="#about" className="hover:text-neo-cyan transition-colors hover:underline decoration-4 underline-offset-8">About</a>
+          </div>
 
-        <a href="#contact" className="hidden lg:inline-block px-4 py-1.5 bg-neo-pink text-white border-2 border-neo-black shadow-neo-sm font-bold text-sm transition-transform hover:-translate-y-1 hover:shadow-neo-md active:translate-y-1 active:shadow-none">
-          Hubungi Saya
-        </a>
+          <a href="#contact" className="hidden lg:inline-block px-4 py-1.5 bg-neo-pink text-white border-2 border-neo-black shadow-neo-sm font-bold text-sm transition-transform hover:-translate-y-1 hover:shadow-neo-md active:translate-y-1 active:shadow-none">
+            Hubungi Saya
+          </a>
+        </div>
       </nav>
 
       {/* HERO & BIO SECTION */}
@@ -68,7 +69,7 @@ export default function Home() {
             Halo, Selamat Datang! 👋
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.5rem] font-black leading-tight uppercase">
-            Saya <span className="text-neo-pink underline decoration-8 underline-offset-8">
+            Saya <span className="text-neo-pink underline decoration-8 underline-offset-8 font-nunito normal-case">
               {nameText}
               <span className="animate-pulse">|</span>
             </span>,
