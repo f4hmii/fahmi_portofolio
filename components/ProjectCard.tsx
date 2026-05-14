@@ -23,7 +23,7 @@ export default function ProjectCard({ id, title, desc, emoji, color, tags, btnCo
         onClick={() => setExpanded(!expanded)} 
         className={`neo-btn ${btnColor} ${btnTextClass} text-center w-full !py-2 !text-lg mt-auto cursor-pointer`}
       >
-        {expanded ? "Tutup Deskripsi" : "Cek Deskripsi"}
+        {expanded ? "Tutup Deskripsi" : "Detail Project"}
       </button>
 
       <a 
