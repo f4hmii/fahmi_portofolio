@@ -40,9 +40,15 @@ export default function Home() {
     <main className="min-h-screen px-6 pt-2 pb-12 md:px-12 md:pt-4 md:pb-20 lg:px-20 lg:pt-4 lg:pb-24 overflow-hidden">
       {/* HEADER SECTION */}
       <nav className="sticky top-2 z-50 flex justify-between items-center mb-16 px-6 py-2 border-3 border-neo-black bg-white shadow-neo-sm">
-        <h1 className="text-2xl md:text-3xl font-black tracking-tighter uppercase bg-neo-yellow border-2 border-neo-black px-2 py-1 shadow-neo-sm inline-block transform -rotate-2">
-          Portofolio<span className="text-neo-pink">.</span>
-        </h1>
+        <a href="/" className="flex items-center">
+          <Image 
+            src="/image/zflogo.png" 
+            alt="Logo Fahmi" 
+            width={120} 
+            height={40} 
+            className="h-10 w-auto object-contain"
+          />
+        </a>
         
         {/* Nav Links */}
         <div className="hidden md:flex gap-6 lg:gap-8 font-black text-base md:text-lg uppercase items-center bg-white">
