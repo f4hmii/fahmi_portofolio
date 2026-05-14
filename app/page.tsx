@@ -118,7 +118,13 @@ export default function Home() {
       <section id="about" className="mb-32 pt-8">
         <div className="flex flex-col md:flex-row gap-8 items-center bg-[#ff4900] p-8 border-4 border-neo-black shadow-neo-hover transform rotate-1">
           <div className="w-full md:w-1/3">
-            <div className="bg-white border-4 border-neo-black p-6 transform -rotate-2 flex flex-col items-center relative overflow-hidden">
+            <div className="bg-white border-4 border-neo-black p-6 transform -rotate-2 flex flex-col items-center relative">
+              {/* Paperclip Icon */}
+              <div className="absolute -top-4 right-10 z-20 transform rotate-12">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-neo-black">
+                  <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                </svg>
+              </div>
               {/* Grid Background Effect */}
               <div className="absolute inset-0 -z-0 pointer-events-none opacity-[0.1]"
                    style={{
@@ -138,7 +144,27 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-2/3 bg-white p-6 md:p-8 border-4 border-neo-black shadow-neo-sm transform -rotate-1">
+          <div className="w-full md:w-2/3 bg-white p-6 md:p-8 border-4 border-neo-black shadow-neo-sm transform -rotate-1 relative overflow-visible">
+            {/* Pushpin Icon (Top-down view to look like it's pinning the paper) */}
+            <div className="absolute top-2 right-2 z-30 transform -rotate-12 hover:scale-110 transition-transform">
+              <div className="relative">
+                {/* Shadow/Needle hole */}
+                <div className="absolute top-1 left-1 w-6 h-6 bg-neo-black rounded-full opacity-20 blur-[1px]"></div>
+                {/* Pin Head */}
+                <div className="w-6 h-6 bg-neo-yellow border-2 border-neo-black rounded-full shadow-neo-sm flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 bg-white rounded-full opacity-60 -translate-x-1 -translate-y-1"></div>
+                </div>
+              </div>
+            </div>
+            {/* Second Pushpin (Bottom Left) */}
+            <div className="absolute bottom-2 left-2 z-30 transform rotate-12 hover:scale-110 transition-transform">
+              <div className="relative">
+                <div className="absolute top-1 left-1 w-6 h-6 bg-neo-black rounded-full opacity-20 blur-[1px]"></div>
+                <div className="w-6 h-6 bg-neo-yellow border-2 border-neo-black rounded-full shadow-neo-sm flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 bg-white rounded-full opacity-60 -translate-x-1 -translate-y-1"></div>
+                </div>
+              </div>
+            </div>
             <p className="text-lg md:text-xl font-medium leading-relaxed">
               Halo! Saya adalah seorang web developer yang fokus pada pembuatan antarmuka pengguna yang menarik, interaktif, dan responsif. Dengan gaya desain <span className="font-bold bg-neo-yellow px-2 py-1 border-2 border-neo-black shadow-neo-sm inline-block transform -rotate-2">Neubrutalism</span> yang khas, saya memadukan estetika yang berani dengan kode yang efisien dan fungsional.
             </p>
@@ -208,11 +234,33 @@ export default function Home() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="bg-neo-cyan border-3 border-neo-black shadow-neo-hover p-8 md:p-16 text-center transform -rotate-1">
+      <section id="contact" className="bg-neo-cyan border-3 border-neo-black shadow-neo-hover p-8 md:p-16 text-center transform -rotate-1 relative overflow-visible">
+        {/* Decorative Pushpins in 4 corners */}
+        {[
+          "top-2 left-2",
+          "top-2 right-2",
+          "bottom-2 left-2",
+          "bottom-2 right-2"
+        ].map((pos, i) => (
+          <div key={i} className={`absolute ${pos} z-30 transform ${i % 2 === 0 ? '-rotate-12' : 'rotate-12'} hover:scale-110 transition-transform`}>
+            <div className="relative">
+              <div className="absolute top-1 left-1 w-6 h-6 bg-neo-black rounded-full opacity-20 blur-[1px]"></div>
+              <div className="w-6 h-6 bg-neo-yellow border-2 border-neo-black rounded-full shadow-neo-sm flex items-center justify-center">
+                <div className="w-1.5 h-1.5 bg-white rounded-full opacity-60 -translate-x-1 -translate-y-1"></div>
+              </div>
+            </div>
+          </div>
+        ))}
         <h2 className="text-5xl md:text-7xl font-black uppercase mb-6">Mari Bekerja Sama!</h2>
-        <p className="text-2xl font-bold mb-10 max-w-3xl mx-auto bg-white p-4 border-3 border-neo-black inline-block transform rotate-1">
+        <div className="text-2xl font-bold mb-10 max-w-3xl mx-auto bg-white p-6 border-3 border-neo-black inline-block transform rotate-1 relative">
+          {/* Paperclip Icon */}
+          <div className="absolute -top-4 -left-2 z-20 transform -rotate-12">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-neo-black">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+            </svg>
+          </div>
           Apakah Anda memiliki ide menarik atau sedang mencari pengembang untuk tim Anda? Jangan ragu untuk menyapa.
-        </p>
+        </div>
         <br />
         <a href="mailto:hello@example.com" className="neo-btn bg-neo-yellow text-2xl px-12 py-6 transform transition hover:scale-105 inline-block">
           Kirim Email
@@ -221,7 +269,7 @@ export default function Home() {
       
       {/* FOOTER */}
       <footer className="mt-20 border-t-3 border-neo-black pt-8 text-center font-bold text-lg">
-        <p>© {new Date().getFullYear()} Fahmi. Dibangun dengan <span className="text-neo-pink">❤</span> & Neubrutalism.</p>
+        <p>© {new Date().getFullYear()} Zulfahmi. All Rights Reserved.</p>
       </footer>
     </main>
   );
