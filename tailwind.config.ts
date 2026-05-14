@@ -5,12 +5,13 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
         'neo-yellow': '#FFE600',
-        'neo-pink': '#FF007A',
+        'neo-pink': '#ff4900',
         'neo-cyan': '#00FFFF',
         'neo-black': '#121212',
       },

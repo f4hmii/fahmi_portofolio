@@ -60,18 +60,28 @@ export default function Home() {
       {/* HERO & BIO SECTION */}
       <section className="flex flex-col md:flex-row gap-6 md:gap-10 items-center justify-between min-h-[calc(100vh-200px)] mb-16 relative">
         {/* Decorative elements */}
-        <div className="absolute top-4 right-1/3 w-16 h-16 bg-neo-yellow rounded-full border-2 border-neo-black shadow-neo-sm -z-10 hidden sm:block"></div>
+        <div className="absolute top-4 right-1/3 w-16 h-16 bg-neo-yellow rounded-full border-2 border-neo-black shadow-neo-sm z-20 hidden sm:block"></div>
         <div className="absolute bottom-0 left-4 w-12 h-12 bg-neo-cyan border-2 border-neo-black shadow-neo-sm -z-10 rotate-12 hidden sm:block"></div>
         <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-neo-pink rounded-full border-2 border-neo-black shadow-neo-sm -z-10 -translate-x-1/2 -translate-y-1/2 blur-xl opacity-20 hidden md:block"></div>
 
-        <div className="w-full md:w-[50%] space-y-3 z-10">
+        <div className="w-full md:w-[50%] space-y-3 z-10 relative">
+          {/* Grid Background Effect (Confined to text area) */}
+          <div className="absolute -inset-10 -z-10 pointer-events-none opacity-[0.25]"
+               style={{
+                 backgroundImage: `linear-gradient(#121212 1.5px, transparent 1.5px), linear-gradient(90deg, #121212 1.5px, transparent 1.5px)`,
+                 backgroundSize: '40px 40px',
+                 maskImage: 'radial-gradient(circle at center, black 20%, transparent 80%)',
+                 WebkitMaskImage: 'radial-gradient(circle at center, black 20%, transparent 80%)'
+               }}>
+          </div>
           <div className="inline-block px-2 py-1 bg-neo-cyan border-2 border-neo-black shadow-neo-sm font-bold uppercase tracking-widest text-xs transform -rotate-1">
             Halo, Selamat Datang! 👋
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black leading-[1.3] uppercase mb-4">
-            Saya <span className="text-neo-pink underline decoration-8 underline-offset-[12px] font-nunito uppercase">
-              {nameText}
-              <span className="animate-pulse">|</span>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black uppercase leading-[1.1]">
+            Saya <span className="relative inline-block font-tegas uppercase px-1 text-[1.2em] -translate-y-[0.12em]">
+              <span className="relative z-10 text-neo-yellow">{nameText}</span>
+              <span className="absolute -bottom-1 left-0 w-full h-[8%] bg-[#ff4900] z-0"></span>
+              <span className="animate-pulse relative z-10 text-neo-yellow font-sans ml-1 border-r-[1.5px] border-[#ff4900] h-full inline-block">&nbsp;</span>
             </span>,
             <br />
             Full Stack Web Developer.
@@ -91,7 +101,7 @@ export default function Home() {
 
         <div className="w-full md:w-[45%] relative mt-10 md:mt-0 z-10 flex justify-center md:justify-end">
           <div className="relative w-full max-w-[280px] sm:max-w-[360px] md:max-w-[420px] lg:max-w-[500px]">
-            <div className="absolute inset-0 bg-neo-pink border-4 border-neo-black translate-x-6 translate-y-6 shadow-neo-md w-full"></div>
+            <div className="absolute inset-0 bg-[#ff4900] border-4 border-neo-black translate-x-6 translate-y-6 shadow-neo-md w-full"></div>
             <div className="relative bg-neo-cyan border-4 border-neo-black aspect-square w-full flex items-center justify-center overflow-hidden">
                <Image 
                  src="/image/profile.png" 
@@ -106,12 +116,19 @@ export default function Home() {
 
       {/* ABOUT ME SECTION */}
       <section id="about" className="mb-32 pt-8">
-        <div className="flex flex-col md:flex-row gap-8 items-center bg-neo-pink p-8 border-4 border-neo-black shadow-neo-hover transform rotate-1">
+        <div className="flex flex-col md:flex-row gap-8 items-center bg-[#ff4900] p-8 border-4 border-neo-black shadow-neo-hover transform rotate-1">
           <div className="w-full md:w-1/3">
-            <div className="bg-white border-4 border-neo-black p-6 transform -rotate-2 flex flex-col items-center">
-              <h2 className="text-4xl md:text-5xl font-black uppercase mb-4 text-center">Tentang Saya</h2>
-              <div className="w-20 h-2 bg-neo-black mb-6"></div>
-              <div className="relative w-32 h-32 md:w-40 md:h-40 border-4 border-neo-black shadow-neo-sm overflow-hidden bg-neo-cyan rotate-3 hover:-rotate-1 transition-transform">
+            <div className="bg-white border-4 border-neo-black p-6 transform -rotate-2 flex flex-col items-center relative overflow-hidden">
+              {/* Grid Background Effect */}
+              <div className="absolute inset-0 -z-0 pointer-events-none opacity-[0.1]"
+                   style={{
+                     backgroundImage: `linear-gradient(#121212 1px, transparent 1px), linear-gradient(90deg, #121212 1px, transparent 1px)`,
+                     backgroundSize: '20px 20px'
+                   }}>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black uppercase mb-4 text-center relative z-10">Tentang Saya</h2>
+              <div className="w-20 h-2 bg-neo-black mb-6 relative z-10"></div>
+              <div className="relative w-32 h-32 md:w-40 md:h-40 border-4 border-neo-black shadow-neo-sm overflow-hidden bg-neo-cyan rotate-3 hover:-rotate-1 transition-transform z-10">
                 <Image 
                   src="/image/profile.png" 
                   alt="Foto Zulfahmi" 
@@ -133,7 +150,16 @@ export default function Home() {
       </section>
 
       {/* SKILLS SECTION */}
-      <section id="skills" className="mb-32">
+      <section id="skills" className="mb-32 relative">
+        {/* Grid Background Effect */}
+        <div className="absolute inset-0 -z-10 pointer-events-none opacity-[0.2]"
+             style={{
+               backgroundImage: `linear-gradient(#121212 1px, transparent 1px), linear-gradient(90deg, #121212 1px, transparent 1px)`,
+               backgroundSize: '40px 40px',
+               maskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)',
+               WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)'
+             }}>
+        </div>
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl md:text-6xl font-black uppercase bg-neo-black text-white p-4 border-3 border-neo-black shadow-neo-hover transform -rotate-2 inline-block">
             Keahlian Saya

@@ -1,4 +1,4 @@
-import { Press_Start_2P, VT323, Nunito } from 'next/font/google';
+import { Press_Start_2P, VT323, Archivo_Black } from 'next/font/google';
 import './globals.css';
 
 const pixelPrimary = Press_Start_2P({ 
@@ -13,10 +13,10 @@ const pixelSecondary = VT323({
   weight: '400',
 });
 
-const nunito = Nunito({
+const archivo = Archivo_Black({
   subsets: ['latin'],
-  variable: '--font-nunito',
-  weight: ['800'],
+  variable: '--font-archivo',
+  weight: '400',
 });
 
 export const metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="id" className={`${pixelPrimary.variable} ${pixelSecondary.variable} ${nunito.variable}`}>
+    <html lang="id" className={`${pixelPrimary.variable} ${pixelSecondary.variable} ${archivo.variable}`}>
       <body>{children}</body>
     </html>
   )
