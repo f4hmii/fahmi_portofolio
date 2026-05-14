@@ -1,6 +1,7 @@
 import { projectsData } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export function generateStaticParams() {
   return projectsData.map((project) => ({
@@ -25,8 +26,14 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
       </nav>
 
       <div className="max-w-4xl mx-auto">
-        <div className={`w-full ${project.color} border-4 border-neo-black shadow-neo-md p-12 flex justify-center items-center mb-10 transform -rotate-1`}>
-          <span className="text-[8rem] md:text-[10rem] animate-bounce">{project.emoji}</span>
+        <div className={`w-full h-64 md:h-[400px] ${project.color} border-4 border-neo-black shadow-neo-md mb-10 transform -rotate-1 relative overflow-hidden`}>
+          <Image 
+            src={project.image} 
+            alt={project.title} 
+            fill 
+            className="object-cover"
+            priority
+          />
         </div>
 
         <div className="bg-white border-4 border-neo-black p-8 md:p-12 shadow-neo-hover transform rotate-1">
