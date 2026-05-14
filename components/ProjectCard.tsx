@@ -1,10 +1,21 @@
-"use client";
+import Image from "next/image";
 
-export default function ProjectCard({ id, title, desc, emoji, color, tags, btnColor, btnTextClass }: any) {
+export default function ProjectCard({ id, title, desc, image, color, tags, btnColor, btnTextClass }: any) {
   return (
     <article className="neo-card flex flex-col group h-full">
-      <div className={`h-40 md:h-48 ${color} border-3 border-neo-black mb-6 flex items-center justify-center overflow-hidden relative`}>
-         <div className="text-6xl group-hover:scale-125 transition-transform duration-300">{emoji}</div>
+      <div className={`h-48 md:h-56 ${color} border-3 border-neo-black mb-6 relative overflow-hidden`}>
+         {image ? (
+           <Image 
+             src={image} 
+             alt={title} 
+             fill 
+             className="object-cover group-hover:scale-110 transition-transform duration-500"
+           />
+         ) : (
+           <div className="w-full h-full flex items-center justify-center text-4xl opacity-20 font-black">
+             NO IMAGE
+           </div>
+         )}
       </div>
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag: any, i: number) => (

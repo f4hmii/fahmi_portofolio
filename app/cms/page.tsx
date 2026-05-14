@@ -8,7 +8,7 @@ export default function CMSPage() {
   const [formData, setFormData] = useState({
     title: "",
     desc: "",
-    emoji: "🚀",
+    image: "",
     color: "bg-neo-pink",
     btnColor: "bg-neo-yellow",
     btnTextClass: "text-neo-black",
@@ -81,15 +81,16 @@ export default function CMSPage() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 <div>
-                  <label className="block font-black uppercase mb-1">Emoji Icon</label>
+                  <label className="block font-black uppercase mb-1">Project Image URL</label>
                   <input 
                     type="text" 
-                    name="emoji"
-                    value={formData.emoji}
+                    name="image"
+                    value={formData.image}
                     onChange={handleInputChange}
-                    className="w-full p-3 border-3 border-neo-black shadow-neo-sm focus:outline-none"
+                    placeholder="https://example.com/image.png"
+                    className="w-full p-3 border-3 border-neo-black shadow-neo-sm focus:outline-none focus:bg-neo-yellow/10"
                   />
                 </div>
                 <div>
@@ -152,7 +153,7 @@ export default function CMSPage() {
                 id="preview"
                 title={formData.title || "Judul Project"}
                 desc={formData.desc || "Deskripsi project akan muncul di sini..."}
-                emoji={formData.emoji}
+                image={formData.image}
                 color={formData.color}
                 tags={formData.tags}
                 btnColor={formData.btnColor}
