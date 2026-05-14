@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function ProjectCard({ title, desc, emoji, color, tags, btnColor, btnTextClass }: any) {
+export default function ProjectCard({ id, title, desc, emoji, color, tags, btnColor, btnTextClass }: any) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -23,8 +23,15 @@ export default function ProjectCard({ title, desc, emoji, color, tags, btnColor,
         onClick={() => setExpanded(!expanded)} 
         className={`neo-btn ${btnColor} ${btnTextClass} text-center w-full !py-2 !text-lg mt-auto cursor-pointer`}
       >
-        {expanded ? "Tutup Detail" : "Detail Project"}
+        {expanded ? "Tutup Deskripsi" : "Cek Deskripsi"}
       </button>
+
+      <a 
+        href={`/projects/${id}`} 
+        className="mt-3 text-center font-black uppercase underline decoration-4 underline-offset-4 hover:text-neo-pink transition-colors text-sm"
+      >
+        Buka Halaman Detail →
+      </a>
     </article>
   );
 }

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+import { projectsData } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
@@ -166,43 +167,9 @@ export default function Home() {
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          <ProjectCard 
-            title="E-Commerce Kiosk App"
-            desc="Aplikasi mandiri untuk pemesanan restoran (Kiosk) dengan antarmuka yang interaktif dan responsif. Terintegrasi dengan backend API untuk manajemen pesanan secara real-time."
-            emoji="🛒"
-            color="bg-neo-cyan"
-            btnColor="bg-neo-pink"
-            btnTextClass="text-white"
-            tags={[
-              {text: "React", color: "bg-neo-yellow"},
-              {text: "Tailwind", color: "bg-white"},
-              {text: "API", color: "bg-neo-cyan"}
-            ]}
-          />
-          <ProjectCard 
-            title="Gesture Control UI"
-            desc="Eksperimen interaksi menggunakan pelacakan tangan (hand-tracking) untuk mengontrol kursor dan memberikan perintah tanpa sentuhan pada layar."
-            emoji="👋"
-            color="bg-neo-yellow"
-            btnColor="bg-neo-black"
-            btnTextClass="text-white"
-            tags={[
-              {text: "MediaPipe", color: "bg-neo-cyan"},
-              {text: "React", color: "bg-white"}
-            ]}
-          />
-          <ProjectCard 
-            title="Neubrutalism Web"
-            desc="Website portofolio personal interaktif dengan gaya desain Neubrutalism yang fokus pada estetika berani, bayangan tajam, dan performa tinggi."
-            emoji="🚀"
-            color="bg-neo-pink"
-            btnColor="bg-white"
-            btnTextClass="text-black"
-            tags={[
-              {text: "Next.js", color: "bg-white"},
-              {text: "Tailwind", color: "bg-neo-yellow"}
-            ]}
-          />
+          {projectsData.slice(0, 3).map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </div>
         
         <div className="mt-16 text-center">
