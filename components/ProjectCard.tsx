@@ -15,7 +15,9 @@ export default function ProjectCard({ id, title, desc, emoji, color, tags, btnCo
           <span key={i} className={`neo-tag ${tag.color}`}>{tag.text}</span>
         ))}
       </div>
-      <h3 className="text-2xl font-black uppercase mb-3">{title}</h3>
+      <a href={`/projects/${id}`} className="hover:text-neo-pink transition-colors">
+        <h3 className="text-2xl font-black uppercase mb-3">{title}</h3>
+      </a>
       <p className={`text-base font-medium mb-6 flex-1 transition-all duration-300 ${expanded ? '' : 'line-clamp-2'}`}>
         {desc}
       </p>
@@ -25,13 +27,6 @@ export default function ProjectCard({ id, title, desc, emoji, color, tags, btnCo
       >
         {expanded ? "Tutup Deskripsi" : "Detail Project"}
       </button>
-
-      <a 
-        href={`/projects/${id}`} 
-        className="mt-3 text-center font-black uppercase underline decoration-4 underline-offset-4 hover:text-neo-pink transition-colors text-sm"
-      >
-        Buka Halaman Detail →
-      </a>
     </article>
   );
 }
