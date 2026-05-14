@@ -68,8 +68,8 @@ export default function Home() {
           <div className="inline-block px-2 py-1 bg-neo-cyan border-2 border-neo-black shadow-neo-sm font-bold uppercase tracking-widest text-xs transform -rotate-1">
             Halo, Selamat Datang! 👋
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.5rem] font-black leading-tight uppercase">
-            Saya <span className="text-neo-pink underline decoration-8 underline-offset-8 font-nunito normal-case">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black leading-[1.3] uppercase mb-4">
+            Saya <span className="text-neo-pink underline decoration-8 underline-offset-[12px] font-nunito uppercase">
               {nameText}
               <span className="animate-pulse">|</span>
             </span>,
